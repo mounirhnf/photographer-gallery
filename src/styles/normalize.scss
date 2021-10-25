@@ -1,0 +1,58 @@
+//------------------------------------------------------------------------------
+// Define all the css normalisations
+// NOTE: the :global() selector is used to prevent the sass compiler from
+// hashing the property
+//------------------------------------------------------------------------------
+
+html {
+  font-size: 10px; // Make all rem values based on 10px (10px = 1rem)
+}
+
+html, body, :global(#__next) {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.4rem;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+:global(#__next) {
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: .12rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+p {
+  line-height: 2.3rem;
+}
+
+button, input, textarea {
+  outline: none;
+  padding: 0;
+}

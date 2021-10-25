@@ -1,0 +1,9 @@
+//------------------------------------------------------------------------------
+// This file contains all the global custom sass mixins
+//------------------------------------------------------------------------------
+
+// This is a mixin that creates an equal size container style
+@mixin square($val) {
+  height: $val;
+  width: $val;
+}

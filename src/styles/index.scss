@@ -1,0 +1,7 @@
+//------------------------------------------------------------------------------
+// Forward all the custom sass configurations to use globally
+//------------------------------------------------------------------------------
+
+@forward 'variables';
+@forward 'placeholders';
+@forward 'mixins';
