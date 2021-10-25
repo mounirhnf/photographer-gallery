@@ -16,5 +16,5 @@ export const windowBreakpoints = {
 
 // Font ------------------------------------------------------------------------
 
-export const fontUrl = `https://fonts.googleapis.com/css2?family=Orbitron:wght\
+export const fontUrl = `https://fonts.googleapis.com/css2?family=Nunito:wght\
 @400;600;700;800;900&display=swap`;
