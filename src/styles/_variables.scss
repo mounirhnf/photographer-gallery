@@ -6,5 +6,9 @@
 $transition: 250ms;
 
 // Colors
+$primary: #4AA1BB;
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 10%);
+
 $light: #FFFFFF;
-$dark: #000000;
+$dark: #12151A;
