@@ -1,8 +1,6 @@
 import {Store} from 'store/types';
-
 import defaults from 'store/defaults';
-
-// import {actions} from 'store/actions';
+import {actions} from 'store/actions';
 
 //------------------------------------------------------------------------------
 
@@ -11,6 +9,11 @@ export default function reducer(
   {type, payload}: Store.Action,
 ): Store.State {
   switch (type) {
+    case actions.setScreenType:
+      return {
+        ...state,
+        screenType: payload.screenType,
+      };
     default:
       return state;
   }

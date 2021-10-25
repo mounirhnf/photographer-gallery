@@ -2,7 +2,9 @@ import {Store} from 'store/types';
 
 //------------------------------------------------------------------------------
 
-const defaults: Store.State = {};
+const defaults: Store.State = {
+  screenType: null,
+};
 
 //------------------------------------------------------------------------------
 
