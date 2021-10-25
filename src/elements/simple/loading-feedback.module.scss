@@ -1,0 +1,51 @@
+@use 'styles' as *;
+
+//------------------------------------------------------------------------------
+
+%line {
+  border: 3px solid transparent;
+  border-top-color: $primary;
+  border-radius: 50%;
+}
+
+//------------------------------------------------------------------------------
+
+.root {
+  @extend %center;
+  position: absolute;
+  z-index: 100;
+  @extend %fill;
+  background-color: $light;
+}
+
+.loader {
+  @extend %center;
+  position: relative;
+  @include square(90px);
+  @extend %line;
+  animation: rotate 2000ms linear infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    @include square(81%);
+    @extend %line;
+    animation: rotate 3000ms linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    @include square(62.5%);
+    @extend %line;
+    animation: rotate 1500ms linear infinite;
+  }
+}
+
+//------------------------------------------------------------------------------
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
