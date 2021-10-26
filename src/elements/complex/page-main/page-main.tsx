@@ -4,7 +4,7 @@ import {Store} from 'store/types';
 import {useSelector} from 'react-redux';
 
 import LoadingFeedback from 'elements/simple/loading-feedback';
-
+import Jumbotron from 'elements/complex/sections/jumbotron';
 import ScrollReset from 'elements/simple/scroll-reset';
 
 import buildClass from 'utility/build-class';
@@ -25,7 +25,7 @@ const Main: React.FC = () => {
     <>
       {!screenType && <LoadingFeedback />}
       <main className={mainClasses}>
-        <h1>Photographer</h1>
+        <Jumbotron />
         <ScrollReset />
       </main>
     </>
