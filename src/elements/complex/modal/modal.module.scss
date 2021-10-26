@@ -1,0 +1,110 @@
+@use 'styles' as *;
+
+//------------------------------------------------------------------------------
+
+.root {
+  @extend %center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  @extend %fill;
+  background-color: rgba($dark, .9);
+  animation: fade $transition ease-in-out;
+}
+
+//------------------------------------------------------------------------------
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 201;
+  width: 600px;
+  max-height: 90vh;
+  max-width: 90%;
+  border-radius: 10px;
+  background-color: $light;
+  overflow: hidden;
+  animation: slide-box $transition ease-in-out;
+}
+
+.header {
+  @extend %center;
+  position: relative;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid $secondary-1;
+}
+
+.title {
+  margin: 0;
+  color: $secondary-8;
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  &::first-letter {
+    color: $primary;
+  }
+}
+
+.close-w {
+  @extend %center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 45px;
+  cursor: pointer;
+}
+
+.close-icon {
+  color: rgba($dark, .6);
+  font-size: 2.4rem;
+  pointer-events: none;
+}
+
+.body {
+  flex-grow: 1;
+  max-height: calc(90vh - 40px);
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+
+  @supports (scrollbar-width: thin) {
+    scrollbar-color: $primary transparent;
+    scrollbar-width: thin;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-box {
+  from {
+    transform: translateY(30px);
+  } to {
+    transform: translateY(0);
+  }
+}
