@@ -3,84 +3,98 @@
     "id": 1,
     "group": ["city"],
     "title": "city 1",
-    "loader": ["#A76B60", "953", "640"]
+    "loader": ["#A76B60", "953", "640"],
+    "url": "img/gallery/city-1.jpg"
   },
   {
     "id": 2,
     "group": ["nature"],
     "title": "nature 1",
-    "loader": ["#2E3121", "427", "640"]
+    "loader": ["#2E3121", "427", "640"],
+    "url": "img/gallery/nature-1.jpg"
   },
   {
     "id": 3,
     "group": ["architecture"],
     "title": "architecture 3",
-    "loader": ["#9ACBD7", "959", "640"]
+    "loader": ["#9ACBD7", "959", "640"],
+    "url": "img/gallery/architecture-3.jpg"
   },
   {
     "id": 4,
     "group": ["portrait"],
     "title": "portrait 4",
-    "loader": ["#949195", "960", "640"]
+    "loader": ["#949195", "960", "640"],
+    "url": "img/gallery/portrait-4.jpg"
   },
   {
     "id": 5,
     "group": ["architecture"],
     "title": "architecture 1",
-    "loader": ["#8D9495", "427", "640"]
+    "loader": ["#8D9495", "427", "640"],
+    "url": "img/gallery/architecture-1.jpg"
   },
   {
     "id": 6,
     "group": ["props"],
     "title": "props 2",
-    "loader": ["#7B6553", "960", "640"]
+    "loader": ["#7B6553", "960", "640"],
+    "url": "img/gallery/props-2.jpg"
   },
   {
     "id": 7,
     "group": ["portrait"],
     "title": "portrait 2",
-    "loader": ["#8C5549", "828", "640"]
+    "loader": ["#8C5549", "828", "640"],
+    "url": "img/gallery/portrait-2.jpg"
   },
   {
     "id": 8,
     "group": ["city"],
     "title": "city 2",
-    "loader": ["#2E2224", "800", "640"]
+    "loader": ["#2E2224", "800", "640"],
+    "url": "img/gallery/city-2.jpg"
   },
   {
     "id": 9,
     "group": ["nature"],
     "title": "nature 3",
-    "loader": ["#5793CF", "853", "640"]
+    "loader": ["#5793CF", "853", "640"],
+    "url": "img/gallery/nature-3.jpg"
   },
   {
     "id": 10,
     "group": ["portrait"],
     "title": "portrait 3",
-    "loader": ["#8AA69B", "427", "640"]
+    "loader": ["#8AA69B", "427", "640"],
+    "url": "img/gallery/portrait-3.jpg"
   },
   {
     "id": 11,
     "group": ["portrait"],
     "title": "portrait 1",
-    "loader": ["#074461", "960", "640"]
+    "loader": ["#074461", "960", "640"],
+    "url": "img/gallery/portrait-1.jpg"
   },
   {
     "id": 12,
     "group": ["props"],
     "title": "props 1",
-    "loader": ["#A68A7B", "960", "640"]
+    "loader": ["#A68A7B", "960", "640"],
+    "url": "img/gallery/props-1.jpg"
   },
   {
     "id": 13,
     "group": ["architecture"],
     "title": "architecture 2",
-    "loader": ["#324447", "427", "640"]
+    "loader": ["#324447", "427", "640"],
+    "url": "img/gallery/architecture-2.jpg"
   },
   {
     "id": 14,
     "group": ["nature"],
     "title": "nature 2",
-    "loader": ["#4C7373", "960", "640"]
+    "loader": ["#4C7373", "960", "640"],
+    "url": "img/gallery/nature-2.jpg"
   }
 ]

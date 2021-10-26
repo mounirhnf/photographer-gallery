@@ -3,6 +3,7 @@ declare namespace Shared {
     id: string;
     group: string[];
     title: string;
+    url: string;
     loader: string[]; 
   }
 }
