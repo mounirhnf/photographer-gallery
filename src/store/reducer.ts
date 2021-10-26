@@ -14,6 +14,11 @@ export default function reducer(
         ...state,
         screenType: payload.screenType,
       };
+    case actions.setCurrentContext:
+      return {
+        ...state,
+        currentContext: payload.context,
+      };
     case actions.setGalleryData:
       return {
         ...state,

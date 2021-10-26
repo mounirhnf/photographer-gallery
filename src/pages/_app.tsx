@@ -6,6 +6,7 @@ import reduxWrapper from 'store';
 
 import useResponsive from 'hooks/use-responsive';
 import useGallery from 'hooks/use-gallery';
+import useNoOverflow from 'hooks/use-no-overflow';
 
 import 'styles/normalize.scss';
 
@@ -21,6 +22,7 @@ function App(props: AppProps) {
 
   useResponsive();
   useGallery(gallery);
+  useNoOverflow();
 
   return <Component {...pageProps} />;
 }

@@ -4,6 +4,7 @@ import {Store} from 'store/types';
 
 export const actions: Store.Actions = {
   setScreenType: 'SET_SCREEN_TYPE',
+  setCurrentContext: 'SET_CURRENT_CONTEXT',
   setGalleryData: 'SET_GALLERY_DATA',
   seekGallery: 'SEEK_GALLERY',
   setGalleryFilter: 'SET_GALLERY_FILTER',
@@ -19,6 +20,19 @@ export function setScreenType(
     type: actions.setScreenType,
     payload: {
       screenType,
+    },
+  };
+}
+
+//------------------------------------------------------------------------------
+
+export function setCurrentContext(
+  context: string | null,
+): Store.ContextAction {
+  return {
+    type: actions.setCurrentContext,
+    payload: {
+      context,
     },
   };
 }
