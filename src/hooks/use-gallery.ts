@@ -15,5 +15,5 @@ export default function useGallery(gallery: Shared.GalleryItem[]) {
 
   React.useEffect(() => {
     dispatch(setGalleryData(gallery));
-  }, []);
+  }, [dispatch]);
 }
