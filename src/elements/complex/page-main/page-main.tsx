@@ -5,6 +5,8 @@ import {useSelector} from 'react-redux';
 
 import LoadingFeedback from 'elements/simple/loading-feedback';
 
+import ScrollReset from 'elements/simple/scroll-reset';
+
 import buildClass from 'utility/build-class';
 
 import cls from './page-main.module.scss';
@@ -24,6 +26,7 @@ const Main: React.FC = () => {
       {!screenType && <LoadingFeedback />}
       <main className={mainClasses}>
         <h1>Photographer</h1>
+        <ScrollReset />
       </main>
     </>
   );
