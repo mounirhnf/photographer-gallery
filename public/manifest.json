@@ -6,15 +6,10 @@
       "src": "/img/logos/logo192.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "/img/logos/logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#12151A",
+  "theme_color": "#000000",
   "background_color": "#FFFFFF"
 }
