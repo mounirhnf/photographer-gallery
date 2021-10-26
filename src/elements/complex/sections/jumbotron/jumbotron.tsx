@@ -53,7 +53,7 @@ const Jumborton: React.FC = () => {
         alt='avatar'
       />
       <h1 className={cls['name']}>JOHN DOE</h1>
-      <p className={cls['proffession']}>Professional Photographer</p>
+      <h2 className={cls['proffession']}>Professional Photographer</h2>
       <ul className={cls['socials']}>
         {socialLinks.map(({id, url}) => {
           return (
