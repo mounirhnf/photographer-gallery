@@ -7,3 +7,16 @@
   height: $val;
   width: $val;
 }
+
+// This mixin simplifies the transition property when there are multiple
+// properties
+@mixin trans($property, $value: var.$transition) {
+  $is-list: list.length($property) > 1;
+  
+  @if not $is-list {
+    transition: $property $value;
+  } @else {
+    transition-property: list.join($property, (), comma);
+    transition-duration: $value;
+  }
+}
