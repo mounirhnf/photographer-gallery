@@ -9,6 +9,7 @@ import useGallery from 'hooks/use-gallery';
 import useNoOverflow from 'hooks/use-no-overflow';
 
 import 'styles/normalize.scss';
+import useScrollReset from 'hooks/use-scroll-reset';
 
 //------------------------------------------------------------------------------
 
@@ -23,6 +24,7 @@ function App(props: AppProps) {
   useResponsive();
   useGallery(gallery);
   useNoOverflow();
+  useScrollReset();
 
   return <Component {...pageProps} />;
 }

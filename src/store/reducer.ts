@@ -24,6 +24,11 @@ export default function reducer(
         ...state,
         noOverflow: payload.noOverflow,
       };
+    case actions.setShowScrollReset:
+      return {
+        ...state,
+        showScrollReset: payload.show,
+      };
     case actions.setGalleryData:
       return {
         ...state,

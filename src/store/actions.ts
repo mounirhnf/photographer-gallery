@@ -6,6 +6,7 @@ export const actions: Store.Actions = {
   setScreenType: 'SET_SCREEN_TYPE',
   setCurrentContext: 'SET_CURRENT_CONTEXT',
   setNoOverflow: 'SET_NO_OVERFLOW',
+  setShowScrollReset: 'SET_SHOW_SCROLL_RESET',
   setGalleryData: 'SET_GALLERY_DATA',
   seekGallery: 'SEEK_GALLERY',
   setGalleryFilter: 'SET_GALLERY_FILTER',
@@ -47,6 +48,19 @@ export function setNoOverflow(
     type: actions.setNoOverflow,
     payload: {
       noOverflow,
+    },
+  };
+}
+
+//------------------------------------------------------------------------------
+
+export function setShowScrollReset(
+  show: boolean,
+): Store.ScrollResetAction {
+  return {
+    type: actions.setShowScrollReset,
+    payload: {
+      show,
     },
   };
 }

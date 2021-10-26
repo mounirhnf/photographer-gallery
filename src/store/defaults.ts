@@ -6,6 +6,7 @@ const defaults: Store.State = {
   screenType: null,
   currentContext: null,
   noOverflow: false,
+  showScrollReset: false,
   gallery: {
     data: [],
     seek: false,
