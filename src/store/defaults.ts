@@ -4,6 +4,12 @@ import {Store} from 'store/types';
 
 const defaults: Store.State = {
   screenType: null,
+  gallery: {
+    data: [],
+    seek: false,
+    filter: 'all',
+    currentPreviewId: null,
+  },
 };
 
 //------------------------------------------------------------------------------

@@ -14,6 +14,38 @@ export default function reducer(
         ...state,
         screenType: payload.screenType,
       };
+    case actions.setGalleryData:
+      return {
+        ...state,
+        gallery: {
+          ...state.gallery,
+          data: payload.data,
+        },
+      };
+    case actions.seekGallery:
+      return {
+        ...state,
+        gallery: {
+          ...state.gallery,
+          seek: payload.seek,
+        },
+      };
+    case actions.setGalleryFilter:
+      return {
+        ...state,
+        gallery: {
+          ...state.gallery,
+          filter: payload.filter,
+        },
+      };
+    case actions.setGalleryPreview:
+      return {
+        ...state,
+        gallery: {
+          ...state.gallery,
+          currentPreviewId: payload.id,
+        },
+      };
     default:
       return state;
   }
