@@ -1,0 +1,65 @@
+@use 'styles' as *;
+
+//------------------------------------------------------------------------------
+
+$outlined: '.outlined';
+
+//------------------------------------------------------------------------------
+
+.root {
+  @extend %center;
+  border: 2px solid $primary;
+  border-radius: 20px;
+  padding: 0 15px;
+  background-color: $primary;
+  user-select: none;
+  cursor: pointer;
+  @include trans(opacity border-color background-color);
+  
+  &:hover:enabled {
+    border-color: $primary-dark;
+    background-color: $primary-dark;
+  }
+
+  &:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+  }
+}
+
+#{$outlined} {
+  border-color: $light !important;
+  background-color: transparent;
+
+  &:hover:enabled {
+    background-color: $light !important;
+  }
+}
+
+//------------------------------------------------------------------------------
+
+.icon, .value {
+  color: $light;
+  @include trans(color);
+
+  #{$outlined} & {
+    color: $light;
+  }
+
+  #{$outlined}:hover:enabled & {
+    color: $secondary-8;
+  }
+}
+
+.icon {
+  margin-right: 12px;
+  font-size: 1.8rem;
+}
+
+.value {
+  line-height: 3.6rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: .16rem;
+  @include trans(color);
+}
