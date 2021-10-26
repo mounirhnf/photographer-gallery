@@ -1,0 +1,124 @@
+@use 'styles' as *;
+
+//------------------------------------------------------------------------------
+
+$root-xs: '.root-xs';
+
+//------------------------------------------------------------------------------
+
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+}
+
+.sub-title {
+  margin-bottom: 15px;
+  color: $secondary-6;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-align: center;
+
+  &::first-letter {
+    color: $primary;
+  }
+}
+
+//------------------------------------------------------------------------------
+
+.profile-card {
+  @extend %center;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 50px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 25%;
+    width: 50%;
+    border-top: 1px solid $secondary-1;
+  }
+
+  #{$root-xs} & {
+    flex-direction: column;
+  }
+}
+
+.avatar {
+  @include square(180px);
+  margin-right: 30px;
+  border-radius: 50%;
+  border: 1px solid $secondary-1;
+
+  #{$root-xs} & {
+    margin: 0 0 20px;
+  }
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  color: $secondary-5;
+  font-weight: 600;
+  line-height: 3.4rem;
+  @include trans(color);
+
+  &.link:hover {
+    color: $primary;
+  }
+
+  #{$root-xs} & {
+    justify-content: center;
+    font-weight: 800;
+  }
+}
+
+.info-icon {
+  color: inherit;
+  margin-right: 15px;
+  font-size: 1.8rem;
+}
+
+.description {
+  text-align: center;
+  color: $secondary-6;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+//------------------------------------------------------------------------------
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill {
+  @extend %center-c;
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+.skill-icon {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.skill-value {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  color: $secondary-6;
+
+  #{$root-xs} & {
+    font-size: 1.4rem;
+  }
+}
