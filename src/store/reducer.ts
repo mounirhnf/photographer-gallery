@@ -19,6 +19,11 @@ export default function reducer(
         ...state,
         currentContext: payload.context,
       };
+    case actions.setNoOverflow:
+      return {
+        ...state,
+        noOverflow: payload.noOverflow,
+      };
     case actions.setGalleryData:
       return {
         ...state,

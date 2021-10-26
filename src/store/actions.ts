@@ -5,6 +5,7 @@ import {Store} from 'store/types';
 export const actions: Store.Actions = {
   setScreenType: 'SET_SCREEN_TYPE',
   setCurrentContext: 'SET_CURRENT_CONTEXT',
+  setNoOverflow: 'SET_NO_OVERFLOW',
   setGalleryData: 'SET_GALLERY_DATA',
   seekGallery: 'SEEK_GALLERY',
   setGalleryFilter: 'SET_GALLERY_FILTER',
@@ -33,6 +34,19 @@ export function setCurrentContext(
     type: actions.setCurrentContext,
     payload: {
       context,
+    },
+  };
+}
+
+//------------------------------------------------------------------------------
+
+export function setNoOverflow(
+  noOverflow: boolean,
+): Store.OverflowAction {
+  return {
+    type: actions.setNoOverflow,
+    payload: {
+      noOverflow,
     },
   };
 }

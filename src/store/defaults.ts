@@ -5,6 +5,7 @@ import {Store} from 'store/types';
 const defaults: Store.State = {
   screenType: null,
   currentContext: null,
+  noOverflow: false,
   gallery: {
     data: [],
     seek: false,
