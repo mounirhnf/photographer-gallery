@@ -14,7 +14,7 @@ $social: '.social';
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 50px 0 20px;
+  padding: 80px 0 30px;
   background-color: $secondary-9;
   overflow: hidden;
 }
@@ -23,7 +23,7 @@ $social: '.social';
   justify-content: center;
   padding: 0;
   height: 100vh;
-  min-height: 700px;
+  min-height: 750px;
   max-height: 1000px;
 }
 
@@ -34,6 +34,7 @@ $social: '.social';
   min-width: 100%;
   min-height: 100%;
   user-select: none;
+  pointer-events: none;
   animation: scale $slow;
 }
 
@@ -43,6 +44,7 @@ $social: '.social';
   z-index: 1;
   @extend %fill;
   background-color: rgba($dark, .75);
+  pointer-events: none;
 }
 
 //------------------------------------------------------------------------------
@@ -51,6 +53,10 @@ $social: '.social';
   @include square(220px);
   border-radius: 50%;
   animation: scale $slow;
+  
+  #{$root-xs} & {
+    @include square(200px);
+  }
 }
 
 .name {
@@ -111,7 +117,7 @@ $social: '.social';
   position: relative;
   height: 38px;
   width: 26px;
-  margin-top: 80px;
+  margin-top: 100px;
   border-radius: 13px;
   border: 2px solid rgba($light, .8);
   cursor: pointer;
