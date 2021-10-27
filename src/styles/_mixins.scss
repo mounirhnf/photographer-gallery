@@ -23,3 +23,11 @@
     transition-duration: $value;
   }
 }
+
+// A mixins that detectes if a browser is Internet explorer and appies the
+// properties inside of it
+@mixin IE() {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
