@@ -1,9 +1,9 @@
 declare namespace Shared {
   interface GalleryItem {
-    id: string;
-    group: string[];
+    id: number;
     title: string;
     url: string;
-    loader: string[]; 
+    group: string[];
+    loader: [string, number, number];
   }
 }
