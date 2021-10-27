@@ -1,17 +1,33 @@
 @use 'styles' as *;
+@use 'sass:math';
+
+//------------------------------------------------------------------------------
+
+$grid-gap: 16px;
+$slow: 450ms;
+
+$item: '.item';
 
 //------------------------------------------------------------------------------
 
 .root {
+  position: relative;
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 0;
-  margin-bottom: 1000px;
 }
 
 .offset {
   padding-right: 17px;
+}
+
+.intersector {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  @extend %fill;
+  pointer-events: none;
 }
 
 //------------------------------------------------------------------------------
@@ -65,7 +81,7 @@
   line-height: 30px;
   user-select: none;
   cursor: pointer;
-  @include trans(border-color background-color color);
+  @include trans(border-color background-color color, $slow);
 
   &:hover:not(.filter-selected) {
     background-color: rgba($primary, .2);
@@ -90,4 +106,134 @@
   font-weight: 700;
   text-align: center;
   color: $secondary-6;
+}
+
+//------------------------------------------------------------------------------
+
+.container-list {
+  display: flex;
+  margin-top: 25px;
+}
+
+.inner-list-w {
+  flex-grow: 1;
+  padding: 0 math.div($grid-gap, 2);
+}
+
+.inner-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+//------------------------------------------------------------------------------
+
+#{$item} {
+  position: relative;
+  margin-bottom: $grid-gap;
+  border: 1px solid rgba($secondary-1, .8);
+  border-radius: 10px;
+  line-height: 0;
+  cursor: crosshair;
+  user-select: none;
+  transform-origin: top left;
+  overflow: hidden;
+  @include trans(border-color);
+  animation: show-photo $slow both;
+}
+
+.loader {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+//------------------------------------------------------------------------------
+
+.content {
+  @extend %center-c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0;
+  @extend %fill;
+  background-color: rgba($dark, .7);
+  @include trans(opacity, $slow);
+
+  #{$item}:hover & {
+    opacity: 1;
+  }
+}
+
+.title {
+  color: $light;
+  line-height: 1.4rem;
+  transform: translateY(30px);
+  @include trans(transform, $slow);
+
+  #{$item}:hover & {
+    transform: translateY(0);
+  }
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  transform: translateY(30px);
+  @include trans(transform, $slow + 200);
+
+  #{$item}:hover & {
+    transform: translateY(0);
+  }
+}
+
+.category {
+  color: $light;
+  line-height: 1.4rem;
+
+  &:not(:last-child) {
+    margin-right: 4px;
+
+    &::after {
+      content: '•';
+      margin-left: 4px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.scale-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: $light;
+  font-size: 3rem;
+  transform: translate(40px, -40px);
+  @include trans(transform, $slow);
+
+  #{$item}:hover & {
+    transform: scale(1);
+  }
+}
+
+//------------------------------------------------------------------------------
+
+@keyframes show-photo {
+  from {
+    opacity: 0;
+    transform: translateX(-$grid-gap) scale(.4);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
