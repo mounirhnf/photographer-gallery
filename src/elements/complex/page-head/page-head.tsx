@@ -19,6 +19,7 @@ who are looking to expand their reach into the digital world';
     <NextHead>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='theme-color' content='#FFFFFF' />
+      <meta name="author" content="Mounir Hanafi" />
       <meta name='description' content={metaDesc} />
       <meta itemProp='name' content={metaTitle} />
       <meta itemProp='description' content={metaDesc} />
