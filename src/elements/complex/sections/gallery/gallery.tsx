@@ -20,6 +20,11 @@ const Gallery: React.FC = () => {
     seek,
   } = galleryState;
 
+  const [
+    filteredData,
+    setFilteredData,
+  ] = React.useState<Shared.GalleryItem[]>([]);
+
   const dispatch = useDispatch();
   const sectionRef = React.useRef<HTMLElement | null>(null);
 
@@ -53,6 +58,14 @@ const Gallery: React.FC = () => {
       dispatch(seekGallery(false));
     }
   }, [seek, dispatch]);
+
+  React.useEffect(() => {
+    if (filter === 'all') {
+      setFilteredData([]);
+    } else {
+      setFilteredData(data.filter(({group}) => group.includes(filter)));
+    }
+  }, [filter]);
   
   return (
     <section ref={sectionRef} id='gallery' className={classes}>
@@ -70,6 +83,11 @@ const Gallery: React.FC = () => {
           );
         })}
       </ul>
+      <p className={cls['info']}>{
+        filter === 'all' ?
+        `${data.length} total photos` :
+        `${filteredData.length} "${filter}" photos out of ${data.length}`
+      }</p>
     </section>
   );
 }
