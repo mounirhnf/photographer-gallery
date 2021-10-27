@@ -103,12 +103,12 @@ export function setGalleryFilter(filter: string): Store.GalleryFilterAction {
 //------------------------------------------------------------------------------
 
 export function setGalleryPreview(
-  id: number | null,
+  previewId: number | null,
 ): Store.GalleryPreviewAction {
   return {
     type: actions.setGalleryPreview,
     payload: {
-      id,
+      previewId,
     },
   };
 }

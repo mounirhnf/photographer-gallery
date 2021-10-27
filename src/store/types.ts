@@ -35,7 +35,7 @@ export namespace Store {
   interface GallerySeekPayload {readonly seek: boolean}
   interface GalleryFilterPayload {readonly filter: string}
   interface GalleryPreviewPayload {
-    readonly id: State['gallery']['currentPreviewId'];
+    readonly previewId: State['gallery']['currentPreviewId'];
   }
 
   interface Payload extends
