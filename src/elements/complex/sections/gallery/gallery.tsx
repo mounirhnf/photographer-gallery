@@ -25,16 +25,13 @@ const Gallery: React.FC = () => {
 
   // Get filters from gallery items
   const filters = React.useMemo<string[]>(() => {
-    const groups: string[][] = [];
+    if (!data) return [];
+    
+    // Get all filters groups from the gallery data and put the in a unique set
+    const groups = new Set(data.map(({group}) => group).flat());
 
-    // Get all the groups from gallery items
-    for (const item of data) groups.push(item.group);
-
-    // Create a unique sorted set of filters
-    const groupSet = Array.from(new Set(groups.flat())).sort();
-
-    // Add the 'all' filter to the filters
-    return ['all', ...groupSet];
+    // Return a sorted set of filters with 'all' as a no filter property
+    return ['all', ...Array.from(groups).sort()];
   }, [data]);
 
   const onFilter = (filter: string) => dispatch(setGalleryFilter(filter));
