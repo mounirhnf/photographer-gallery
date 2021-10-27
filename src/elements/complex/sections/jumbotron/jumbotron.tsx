@@ -9,9 +9,11 @@ import useNavigation from 'hooks/use-navigation';
 
 import Portal from 'elements/simple/portal';
 import Modal from 'elements/complex/modal';
-import About from 'elements/complex/sections/about';
 import Button from 'elements/complex/button';
 import SocialIcon from 'elements/complex/social-icon';
+
+import About from 'elements/complex/sections/about';
+import Contact from 'elements/complex/sections/contact';
 
 import {
   FaInfoCircle as AboutIcon,
@@ -116,7 +118,7 @@ const Jumborton: React.FC = () => {
             onClose={() => dispatch(setCurrentContext(null))}>
           {context === 'no-click-away_jumbotron-about' ?
             <About /> :
-            <h1>Contact me</h1>
+            <Contact />
           }
         </Modal>
       </Portal>}
