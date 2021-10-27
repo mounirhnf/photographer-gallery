@@ -11,6 +11,7 @@ import Portal from 'elements/simple/portal';
 import Modal from 'elements/complex/modal';
 
 import Jumbotron from 'elements/complex/sections/jumbotron';
+import Gallery from 'elements/complex/sections/gallery';
 import About from 'elements/complex/sections/about';
 import Contact from 'elements/complex/sections/contact';
 
@@ -35,6 +36,7 @@ const Main: React.FC = () => {
       {!screenType && <LoadingFeedback />}
       <main className={mainClasses}>
         <Jumbotron />
+        <Gallery />
         {context && context.includes('section') && <Portal>
           <Modal
               title={modalTitles[context]}

@@ -1,0 +1,83 @@
+@use 'styles' as *;
+
+//------------------------------------------------------------------------------
+
+.root {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 0;
+  margin-bottom: 1000px;
+}
+
+.offset {
+  padding-right: 17px;
+}
+
+//------------------------------------------------------------------------------
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  position: relative;
+  color: $secondary-7;
+  font-size: 2.6rem;
+  font-weight: 900;
+  text-align: center;
+
+  &::first-letter {
+    color: $primary;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 50px);
+    height: 4px;
+    width: 100px;
+    background-color: $primary;
+    border-radius: 2px;
+  }
+}
+
+//------------------------------------------------------------------------------
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.filter {
+  margin-bottom: 10px;
+  border: 1px solid $secondary-5;
+  border-radius: 16px;
+  padding: 0 15px;
+  color: $secondary-5;
+  font-weight: 600;
+  line-height: 30px;
+  user-select: none;
+  cursor: pointer;
+  @include trans(border-color background-color color);
+
+  &:hover:not(.filter-selected) {
+    background-color: rgba($primary, .2);
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.filter-selected {
+  border-color: $primary;
+  background-color: $primary;
+  color: $light;
+}
