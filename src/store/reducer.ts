@@ -29,6 +29,33 @@ export default function reducer(
         ...state,
         showScrollReset: payload.show,
       };
+    case actions.setContactFormIsSubmitting:
+      return {
+        ...state,
+        contactForm: {
+          ...state.contactForm,
+          isSubmitting: payload.isSubmitting,
+        },
+      };
+    case actions.setContactFormValue:
+      return {
+        ...state,
+        contactForm: {
+          ...state.contactForm,
+          values: {
+            ...state.contactForm.values,
+            [payload.id]: payload.value,
+          },
+        },
+      };
+    case actions.clearContactForm:
+      return {
+        ...state,
+        contactForm: {
+          isSubmitting: false,
+          values: defaults.contactForm.values,
+        },
+      };
     case actions.setGalleryData:
       return {
         ...state,

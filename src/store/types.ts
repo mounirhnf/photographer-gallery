@@ -4,6 +4,15 @@ export namespace Store {
     readonly currentContext: string | null;
     readonly noOverflow: boolean;
     readonly showScrollReset: boolean;
+    readonly contactForm: {
+      readonly isSubmitting: boolean;
+      readonly values: {
+        name: string;
+        email: string;
+        subject: string;
+        message: string;
+      },
+    }
     readonly gallery: {
       readonly data: Shared.GalleryItem[];
       readonly seek: boolean;
@@ -17,6 +26,10 @@ export namespace Store {
     readonly setCurrentContext: 'SET_CURRENT_CONTEXT';
     readonly setNoOverflow: 'SET_NO_OVERFLOW';
     readonly setShowScrollReset: 'SET_SHOW_SCROLL_RESET';
+    readonly setContactFormIsSubmitting: 'SET_CONTACT_FORM_IS_SUBMITTING';
+    readonly setContactFormValue: 'SET_CONTACT_FORM_VALUE';
+    readonly clearContactForm: 'CLEAR_CONTACT_FORM';
+    readonly submitContactForm: 'SUBMIT_CONTACT_FORM';
     readonly setGalleryData: 'SET_GALLERY_DATA';
     readonly seekGallery: 'SEEK_GALLERY';
     readonly setGalleryFilter: 'SET_GALLERY_FILTER';
@@ -31,6 +44,11 @@ export namespace Store {
   interface ContextPayload {readonly context: string | null}
   interface OverflowPayload {readonly noOverflow: boolean}
   interface ScrollResetPayload {readonly show: boolean}
+  interface ContactFormSubmittingPayload {readonly isSubmitting: boolean}
+  interface ContactFormValuePayload {
+    readonly id: string;
+    readonly value: string;
+  }
   interface GalleryDataPayload {readonly data: Shared.GalleryItem[]}
   interface GallerySeekPayload {readonly seek: boolean}
   interface GalleryFilterPayload {readonly filter: string}
@@ -43,6 +61,8 @@ export namespace Store {
     ContextPayload,
     OverflowPayload,
     ScrollResetPayload,
+    ContactFormSubmittingPayload,
+    ContactFormValuePayload,
     GalleryDataPayload,
     GallerySeekPayload,
     GalleryFilterPayload,
@@ -57,6 +77,10 @@ export namespace Store {
   export interface ContextAction extends Action<ContextPayload> {};
   export interface OverflowAction extends Action<OverflowPayload> {};
   export interface ScrollResetAction extends Action<ScrollResetPayload> {};
+  export interface ContactFormSubmittingAction extends
+    Action<ContactFormSubmittingPayload> {};
+  export interface ContactFormValueAction extends
+    Action<ContactFormValuePayload> {};
   export interface GalleryDataAction extends Action<GalleryDataPayload> {};
   export interface GallerySeekAction extends Action<GallerySeekPayload> {};
   export interface GalleryFilterAction extends Action<GalleryFilterPayload> {};

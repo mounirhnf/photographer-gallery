@@ -6,6 +6,7 @@ import {createLogger} from 'redux-logger';
 // You can put all the actions you want the logger to ignore in this array
 const ignoredActions: Store.ActionType[] = [
   '__NEXT_REDUX_WRAPPER_HYDRATE__',
+  'SET_CONTACT_FORM_VALUE',
 ];
 
 export default createLogger({

@@ -7,6 +7,15 @@ const defaults: Store.State = {
   currentContext: null,
   noOverflow: false,
   showScrollReset: false,
+  contactForm: {
+    isSubmitting: false,
+    values: {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
+  },
   gallery: {
     data: [],
     seek: false,
