@@ -46,7 +46,7 @@ const FormElement: React.FC<FormElementProps> = (props) => {
           prefix={icon}
         />}
         <Field
-          {...{id, value, disabled, autoFocus, placeholder}}
+          {...{id, value, disabled, required, autoFocus, placeholder}}
           className={cls['field']}
           type={type !== 'area' ? type : undefined}
           name={id}
@@ -68,7 +68,7 @@ interface FormElementProps {
   label: string;
   placeholder: string;
   value: string;
-  icon: IconType;
+  icon?: IconType;
   disabled?: boolean;
   required?: boolean;
   autoFocus?: boolean;
