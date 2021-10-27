@@ -40,11 +40,17 @@ $social: '.social';
   user-select: none;
   pointer-events: none;
   animation: scale $slow;
+  
+  @include IE {
+    transform: translateX(-50%);
+    animation: none;
+  }
 }
 
 .overlay {
   position: absolute;
   top: 0;
+  left: 0;
   z-index: 1;
   @extend %fill;
   background-color: rgba($dark, .75);
