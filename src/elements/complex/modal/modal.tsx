@@ -38,7 +38,7 @@ const Modal: React.FC<ModalProps> = (props) => {
         onMouseDown={handleClose}>
       <div className={cls['box']}>
         <div className={cls['header']}>
-          <h1 className={cls['title']}>{title}</h1>
+          <h3 className={cls['title']}>{title}</h3>
           <div className={cls['close-w']} onClick={onClose}>
             <Icon className={cls['close-icon']} prefix={CloseIcon} />
           </div>

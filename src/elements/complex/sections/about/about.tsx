@@ -62,7 +62,7 @@ const About: React.FC = () => {
           })}
         </ul>
       </div>
-      <h2 className={classes['sub-title']}>Who am i ?</h2>
+      <h4 className={classes['sub-title']}>Who am i ?</h4>
       <p className={classes['description']}>
         Hi, i am JOHN DOE a professional photographer Id officia qui irure id
         et pariatur officia non. Cillum non officia voluptate esse. Voluptate
@@ -70,7 +70,7 @@ const About: React.FC = () => {
         veniam nostrud labore. Amet non pariatur dolore consequat non voluptate
         esse occaecat consequat aute.
       </p>
-      <h2 className={classes['sub-title']}>My Skills</h2>
+      <h4 className={classes['sub-title']}>My Skills</h4>
       <ul className={classes['skills']}>
         {skills.map((skill, key) => {
           return (
