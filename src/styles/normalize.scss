@@ -4,6 +4,10 @@
 // hashing the property
 //------------------------------------------------------------------------------
 
+@use 'variables' as var;
+
+//------------------------------------------------------------------------------
+
 html {
   font-size: 10px; // Make all rem values based on 10px (10px = 1rem)
 }
@@ -28,6 +32,11 @@ body {
   flex-shrink: 0;
   font-family: 'Nunito', sans-serif;
   letter-spacing: .12rem;
+
+  &::selection {
+    background-color: var.$primary;
+    color: var.$light;
+  }
 }
 
 ul {
