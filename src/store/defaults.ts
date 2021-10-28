@@ -20,7 +20,7 @@ const defaults: Store.State = {
     data: [],
     seek: false,
     filter: 'all',
-    currentPreviewId: null,
+    previewed: null,
   },
 };
 

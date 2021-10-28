@@ -163,12 +163,12 @@ export function setGalleryFilter(filter: string): Store.GalleryFilterAction {
 //------------------------------------------------------------------------------
 
 export function setGalleryPreview(
-  previewId: number | null,
+  previewed: Store.State['gallery']['previewed'],
 ): Store.GalleryPreviewAction {
   return {
     type: actions.setGalleryPreview,
     payload: {
-      previewId,
+      previewed,
     },
   };
 }

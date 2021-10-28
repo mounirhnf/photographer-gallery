@@ -85,7 +85,7 @@ export default function reducer(
         ...state,
         gallery: {
           ...state.gallery,
-          currentPreviewId: payload.previewId,
+          previewed: payload.previewed,
         },
       };
     default:

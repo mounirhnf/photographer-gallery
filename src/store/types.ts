@@ -17,7 +17,7 @@ export namespace Store {
       readonly data: Shared.GalleryItem[];
       readonly seek: boolean;
       readonly filter: string;
-      readonly currentPreviewId: number | null;
+      readonly previewed: Shared.GalleryItem | null;
     };
   }
 
@@ -40,7 +40,7 @@ export namespace Store {
 
   export type ActionType = Actions[keyof Actions] | NextHydrationAction;
 
-  interface ScreenTypePayload {readonly screenType: Store.State['screenType']}
+  interface ScreenTypePayload {readonly screenType: State['screenType']}
   interface ContextPayload {readonly context: string | null}
   interface OverflowPayload {readonly noOverflow: boolean}
   interface ScrollResetPayload {readonly show: boolean}
@@ -53,7 +53,7 @@ export namespace Store {
   interface GallerySeekPayload {readonly seek: boolean}
   interface GalleryFilterPayload {readonly filter: string}
   interface GalleryPreviewPayload {
-    readonly previewId: State['gallery']['currentPreviewId'];
+    readonly previewed: State['gallery']['previewed'];
   }
 
   interface Payload extends
