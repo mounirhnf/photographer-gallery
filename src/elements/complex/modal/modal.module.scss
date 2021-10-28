@@ -2,6 +2,10 @@
 
 //------------------------------------------------------------------------------
 
+$slow: 400ms;
+
+//------------------------------------------------------------------------------
+
 .root {
   @extend %center;
   position: fixed;
@@ -10,7 +14,7 @@
   z-index: 200;
   @extend %fill;
   background-color: rgba($dark, .9);
-  animation: fade $transition ease-in-out;
+  animation: fade $slow ease-in-out;
 }
 
 //------------------------------------------------------------------------------
@@ -27,7 +31,7 @@
   border-radius: 10px;
   background-color: $light;
   overflow: hidden;
-  animation: slide-box $transition ease-in-out;
+  animation: slide-box $slow ease-in-out;
 }
 
 .header {
