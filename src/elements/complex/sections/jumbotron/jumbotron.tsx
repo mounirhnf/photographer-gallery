@@ -8,14 +8,14 @@ import {setCurrentContext} from 'store/actions';
 import useNavigation from 'hooks/use-navigation';
 
 import Button from 'elements/complex/button';
-import SocialIcon from 'elements/complex/social-icon';
+import SocialLinks from 'elements/complex/social-links';
 
 import {
   FaInfoCircle as AboutIcon,
   FaEnvelope as ContactIcon,
 } from 'react-icons/fa';
 
-import {env, socialLinks} from 'configs';
+import {env} from 'configs';
 
 import buildClass from 'utility/build-class';
 
@@ -64,21 +64,7 @@ const Jumborton: React.FC = () => {
       />
       <h1 className={cls['name']}>JOHN DOE</h1>
       <h2 className={cls['proffession']}>Professional Photographer</h2>
-      <ul className={cls['socials']}>
-        {socialLinks.map(({id, url}) => {
-          return (
-            <li key={id} className={cls['social-w']}>
-              <a  title={id}
-                  className={cls['social']}
-                  href={url}
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                <SocialIcon className={cls['social-icon']} name={id} />
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <SocialLinks className={cls['socials']} />
       <Button
           className={cls['button']}
           icon={AboutIcon}

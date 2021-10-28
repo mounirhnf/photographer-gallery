@@ -87,25 +87,8 @@ $social: '.social';
 }
 
 .socials {
-  display: flex;
   margin: 10px 0 15px;
   animation: slide $slow both 200ms;
-}
-
-#{$social} {
-  @extend %center;
-  height: 30px;
-  width: 40px;
-}
-
-.social-icon {
-  color: $light;
-  font-size: 2rem;
-  @include trans(color);
-
-  #{$social}:hover & {
-    color: $primary;
-  }
 }
 
 .button {
@@ -133,14 +116,6 @@ $social: '.social';
   cursor: pointer;
   @include trans(border-color);
   animation: scale $slow both 500ms;
-
-  &:hover {
-    border-color: $light;
-
-    &::after {
-      background-color: $light;
-    }
-  }
 
   &::after {
     opacity: 0;

@@ -1,0 +1,27 @@
+@use 'styles' as *;
+
+//------------------------------------------------------------------------------
+
+$link: '.link';
+
+//------------------------------------------------------------------------------
+
+.root {
+  display: flex;
+}
+
+#{$link} {
+  @extend %center;
+  height: 30px;
+  width: 40px;
+}
+
+#{$link}-icon {
+  color: $light;
+  font-size: 2rem;
+  @include trans(color);
+
+  #{$link}:hover & {
+    color: $primary;
+  }
+}
