@@ -2,11 +2,21 @@ import React from 'react';
 import {Store} from 'store/types';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {seekGallery, setGalleryFilter, setGalleryPreview} from 'store/actions';
+import {
+  setCurrentContext,
+  setGalleryFilter,
+  setGalleryPreview,
+  seekGallery,
+} from 'store/actions';
 
+import Portal from 'elements/simple/portal';
 import Icon from 'elements/simple/icon';
 
 import {MdZoomOutMap as ScaleIcon} from 'react-icons/md';
+import {
+  CgClose as CloseIcon,
+  CgSpinner as SpinnerIcon,
+} from 'react-icons/cg';
 
 import {env} from 'configs';
 
@@ -17,14 +27,23 @@ import cls from './gallery.module.scss';
 //------------------------------------------------------------------------------
 
 const Gallery: React.FC = () => {
-  const screenType = useSelector((store: Store.State) => store.screenType);
-  const galleryState = useSelector((store: Store.State) => store.gallery);
-  const noOverflow = useSelector((store: Store.State) => store.noOverflow);
+  const {
+    screenType,
+    galleryState,
+    noOverflow,
+    context,
+  } = useSelector((store: Store.State) => ({
+    screenType: store.screenType,
+    galleryState: store.gallery,
+    noOverflow: store.noOverflow,
+    context: store.currentContext,
+  }));
   
   const {
     data,
     filter,
     seek,
+    previewed: previewedItem,
   } = galleryState;
 
   const [
@@ -71,6 +90,16 @@ const Gallery: React.FC = () => {
   const filteredItemsCount = `${filteredData.length}`.padStart(2, '0');
 
   const onFilter = (filter: string) => dispatch(setGalleryFilter(filter));
+
+  const handleItemPreview = (item: Store.State['gallery']['previewed']) => {
+    dispatch(setCurrentContext('no-click-away_gallery-lightbox'));
+    dispatch(setGalleryPreview(item));
+  };
+  
+  const handleLightboxClose = () => {
+    dispatch(setCurrentContext(null));
+    dispatch(setGalleryPreview(null));
+  };
 
   const classes = buildClass(
     cls['root'],
@@ -127,13 +156,21 @@ const Gallery: React.FC = () => {
                 <GalleryItem
                   key={item.id}
                   {...item}
-                  onPreview={() => dispatch(setGalleryPreview(item.id))}
+                  onPreview={() => handleItemPreview(item)}
                 />
               ))}
             </ul>
           </li>
         ))}
       </ul>
+      {previewedItem && context === 'no-click-away_gallery-lightbox' &&
+        <Portal>
+          <Lightbox
+            item={previewedItem}
+            onClose={handleLightboxClose}
+          />
+        </Portal>
+      }
     </section>
   );
 }
@@ -180,8 +217,62 @@ const GalleryItem: React.FC<GalleryItemProps> = (props) => {
 
 //------------------------------------------------------------------------------
 
+const Lightbox: React.FC<LightboxProps> = (props) => {
+  const {
+    item,
+    onClose,
+  } = props;
+
+  const [isLoading, setIsLoading] = React.useState(true);
+  const rootRef = React.useRef<HTMLDivElement | null>(null);
+
+  const handleClose = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.target === rootRef.current && onClose();
+  };
+
+  const classes = buildClass(
+    cls['lightbox'],
+    isLoading && cls['lightbox-loading'],
+  );
+
+  React.useEffect(() => {
+    const keyListner = (event: KeyboardEvent) => {
+      event.key === 'Escape' && onClose();
+    };
+
+    window.addEventListener('keydown', keyListner);
+
+    return () => window.removeEventListener('keydown', keyListner);
+  }, []);
+
+  return (
+    <div ref={rootRef} className={classes} onClick={handleClose}>
+      {isLoading && <Icon className={cls['spinner']} prefix={SpinnerIcon} />}
+      <figure className={cls['figure']}>
+        <img
+          className={cls['image']}
+          src={item.url}
+          alt={`lightbox-preview - ${item.title}`}
+          onLoad={() => setIsLoading(false)}
+        />
+        <figcaption className={cls['caption']}>{item.title}</figcaption>
+      </figure>
+      <div className={cls['close']} onClick={onClose}>
+        <Icon className={cls['close-icon']} prefix={CloseIcon} />
+      </div>
+    </div>
+  );
+}
+
+//------------------------------------------------------------------------------
+
 interface GalleryItemProps extends Shared.GalleryItem {
   onPreview: () => void;
+}
+
+interface LightboxProps {
+  item: Shared.GalleryItem;
+  onClose: () => void;
 }
 
 //------------------------------------------------------------------------------

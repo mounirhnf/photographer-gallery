@@ -220,12 +220,102 @@ $item: '.item';
 
 //------------------------------------------------------------------------------
 
+.lightbox {
+  @extend %center;
+  @extend %fill;
+  background-color: rgba($dark, .9);
+  animation: show-lightbox $slow;
+}
+
+.close {
+  @extend %center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  @include square(100px);
+  background: none;
+  cursor: pointer;
+  animation: fade $slow;
+}
+
+.close-icon {
+  color: $light;
+  font-size: 4rem;
+  @include trans(color);
+
+  .close:hover & {
+    color: $primary;
+  }
+}
+
+.figure {
+  position: relative;
+  width: unset;
+  margin: 0;
+  line-height: 0;
+  animation: slide-figure $slow;
+
+  .lightbox-loading & {
+    display: none;
+  }
+}
+
+.image {
+  max-height: 80vh;
+  max-width: 80vw;
+  border: 1px solid $secondary-9;
+  border-radius: 5px;
+}
+
+.caption {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: calc(100% + 10px);
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: .2rem;
+  color: $light;
+}
+
+.spinner {
+  font-size: 4rem;
+  color: $light;
+  animation: spin 600ms linear infinite;
+}
+
+//------------------------------------------------------------------------------
+
+
 @keyframes show-photo {
   from {
-    opacity: 0;
     transform: translateX(-$grid-gap) scale(.4);
   } to {
-    opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes show-lightbox {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-figure {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
