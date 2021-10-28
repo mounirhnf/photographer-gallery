@@ -15,7 +15,7 @@ import {
   FaEnvelope as ContactIcon,
 } from 'react-icons/fa';
 
-import {env} from 'configs';
+import {env, socialLinks} from 'configs';
 
 import buildClass from 'utility/build-class';
 
@@ -111,11 +111,6 @@ const Jumborton: React.FC = () => {
 //------------------------------------------------------------------------------
 
 const coverSlideThreshold = 800;
-const socialLinks = [
-  {id: 'twitter', url: 'https://www.twitter.com/'},
-  {id: 'instagram', url: 'https://www.instagram.com/'},
-  {id: 'facebook', url: 'https://www.facebook.com/'},
-];
 
 //------------------------------------------------------------------------------
 

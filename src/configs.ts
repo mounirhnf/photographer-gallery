@@ -14,6 +14,12 @@ export const windowBreakpoints = {
   'xs': 576,
 };
 
+export const socialLinks = [
+  {id: 'twitter', url: 'https://www.twitter.com/'},
+  {id: 'instagram', url: 'https://www.instagram.com/'},
+  {id: 'facebook', url: 'https://www.facebook.com/'},
+];
+
 // Font ------------------------------------------------------------------------
 
 export const fontUrl = `https://fonts.googleapis.com/css2?family=Nunito:wght\
