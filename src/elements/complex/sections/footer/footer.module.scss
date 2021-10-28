@@ -1,0 +1,26 @@
+@use 'styles' as *;
+
+//------------------------------------------------------------------------------
+
+.root {
+  @extend %center-c;
+  padding: 30px 0;
+  width: 100%;
+  margin-top: 20px;
+  background-color: $dark;
+}
+
+.offset {
+  padding-right: 17px;
+}
+
+//------------------------------------------------------------------------------
+
+.socials {
+  margin-bottom: 30px;
+}
+
+.copyright {
+  color: $light;
+  font-weight: 500;
+}

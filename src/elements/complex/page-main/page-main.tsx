@@ -14,6 +14,7 @@ import Jumbotron from 'elements/complex/sections/jumbotron';
 import Gallery from 'elements/complex/sections/gallery';
 import About from 'elements/complex/sections/about';
 import Contact from 'elements/complex/sections/contact';
+import Footer from 'elements/complex/sections/footer';
 
 import buildClass from 'utility/build-class';
 
@@ -47,6 +48,7 @@ const Main: React.FC = () => {
             }
           </Modal>
         </Portal>}
+        <Footer />
         <ScrollReset />
       </main>
     </>
