@@ -1,7 +1,3 @@
-//------------------------------------------------------------------------------
-// This hooks provides functions that handle scroll navigation
-//------------------------------------------------------------------------------
-
 import {useDispatch} from 'react-redux';
 
 import {seekGallery} from 'store/actions';

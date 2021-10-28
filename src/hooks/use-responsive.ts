@@ -1,8 +1,3 @@
-//------------------------------------------------------------------------------
-// This hook waches the resizing of the window and changes the screen type store
-// state accordingly
-//------------------------------------------------------------------------------
-
 import React from 'react';
 
 import {Store} from 'store/types';

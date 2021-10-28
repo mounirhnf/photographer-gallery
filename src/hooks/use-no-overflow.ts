@@ -1,7 +1,3 @@
-//------------------------------------------------------------------------------
-// This hook is used to prevent user from scrolling if a context is open
-//------------------------------------------------------------------------------
-
 import React from 'react';
 import {Store} from 'store/types';
 

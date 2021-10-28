@@ -22,8 +22,10 @@ const Index: NextPage = () => {
 //------------------------------------------------------------------------------
 
 export const getStaticProps = reduxWrapper.getStaticProps(async () => {
+  // Get gellery data asyncrounously
   const gallery = await getGallery();
 
+  // Return the data as a static prop
   return {
     props: {
       gallery,

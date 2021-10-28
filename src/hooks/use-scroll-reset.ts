@@ -1,8 +1,3 @@
-//------------------------------------------------------------------------------
-// This hook waches the window scroll and shows/hides the reset scroll button
-// accordinglly
-//------------------------------------------------------------------------------
-
 import React from 'react';
 
 import {useDispatch} from 'react-redux';
@@ -28,11 +23,12 @@ export default function useScrollReset() {
 
     window.addEventListener('scroll', scrollListner);
 
-    // Clear scroll event to prevent memory leaks
+    // Clear scroll event on unmounting to prevent memory leaks
     return () => window.removeEventListener('scroll', scrollListner);
   }, []);
 
   React.useEffect(() => {
+    // Set the store state to the calculated state
     dispatch(setShowScrollReset(temp));
   }, [dispatch, temp]);
 }
