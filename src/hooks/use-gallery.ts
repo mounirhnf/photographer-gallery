@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// This hook gets the dallery data from the apps static props and sets it to
+// This hook gets the gallery data from the apps static props and sets it to
 // the store
 //------------------------------------------------------------------------------
 

@@ -7,9 +7,9 @@ import reduxWrapper from 'store';
 import useResponsive from 'hooks/use-responsive';
 import useGallery from 'hooks/use-gallery';
 import useNoOverflow from 'hooks/use-no-overflow';
+import useScrollReset from 'hooks/use-scroll-reset';
 
 import 'styles/normalize.scss';
-import useScrollReset from 'hooks/use-scroll-reset';
 
 //------------------------------------------------------------------------------
 
