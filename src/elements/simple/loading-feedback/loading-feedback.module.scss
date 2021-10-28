@@ -3,6 +3,7 @@
 //------------------------------------------------------------------------------
 
 %line {
+  box-sizing: border-box;
   border: 3px solid transparent;
   border-top-color: $primary;
   border-radius: 50%;
@@ -19,7 +20,6 @@
 }
 
 .loader {
-  @extend %center;
   position: relative;
   @include square(90px);
   @extend %line;
@@ -28,16 +28,20 @@
   &::before {
     content: '';
     position: absolute;
-    @include square(81%);
+    @include square(74px);
     @extend %line;
+    top: 5px;
+    left: 5px;
     animation: rotate 3000ms linear infinite;
   }
 
   &::after {
     content: '';
     position: absolute;
-    @include square(62.5%);
+    @include square(58px);
     @extend %line;
+    top: 13px;
+    left: 13px;
     animation: rotate 1500ms linear infinite;
   }
 }
